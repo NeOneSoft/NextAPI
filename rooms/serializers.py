@@ -5,7 +5,7 @@ from rest_framework import serializers
 from .models import Room
 
 
-class BoardSerializer(serializers.ModelSerializer):
+class RoomSerializer(serializers.ModelSerializer):
     """
     Room general purpose serializer
     """
@@ -15,7 +15,7 @@ class BoardSerializer(serializers.ModelSerializer):
         fields = ['room_name', 'reserved_date', 'start_time', 'end_time', 'status', 'minutes_estimated', 'current_time']
 
 
-class CreateBoardSerializer(serializers.ModelSerializer):
+class CreateRoomSerializer(serializers.ModelSerializer):
     """
     Create Room serializer
     """
