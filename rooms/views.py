@@ -7,7 +7,7 @@ from .models import Room
 from .serializers import RoomSerializer, CreateRoomSerializer
 
 
-class BoardViewSet(viewsets.ModelViewSet):
+class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
 
