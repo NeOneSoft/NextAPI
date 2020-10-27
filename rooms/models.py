@@ -12,7 +12,7 @@ STATUS = (
 
 class Room(models.Model):
     room_name = models.CharField(max_length=200)
-    date = models.DateField()
+    reserved_date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
     status = models.CharField(max_length=8, choices=STATUS)
