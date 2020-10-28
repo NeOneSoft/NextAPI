@@ -17,7 +17,7 @@ class Room(models.Model):
     end_time = models.TimeField()
     status = models.CharField(max_length=8, choices=STATUS)
     minutes_estimated = models.IntegerField(validators=[MaxValueValidator(180), MinValueValidator(1)])
-    current_time = models.TimeField(default=timezone.now())
+    current_time = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return self.room_name
