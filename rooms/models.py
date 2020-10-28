@@ -3,6 +3,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
 
+
 # Define choices for status field
 STATUS = (
     ('OPEN', 'OPEN'),
@@ -22,6 +23,3 @@ class Room(models.Model):
     def __str__(self):
         return self.room_name
 
-    def change_status(self):
-        if self.end_time == self.current_time:
-            return self.status == 'OPEN'

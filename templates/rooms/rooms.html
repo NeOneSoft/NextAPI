@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="col-md-6 col-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Rooms available for your meeting</h3>
+    </div>
+    <ul class="list-group list-group-flush">
+      {% for room in rooms %}
+      <li class="list-group-item">
+        {{ room.room_name }}
+       <br>
+        Date of reservation: {{ room.reserved_date }}
+       <br>
+        Start Hour: {{ room.start_time }}
+       <br>
+        End Hour: {{ room.end_time }}
+       <br>
+        Duration: {{ room.minutes_estimated }}
+       <br>
+        Status: {{ room.status }}
+       <br>
+        {% if room.status == 'OPEN' %}
+         <form action="{% url 'room-status' room.id %}" method="post">
+           {% csrf_token %}
+         <button type="submit" class="btn btn-primary btn-sm btn-note"> RESERVE </button>
+         </form>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

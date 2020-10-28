@@ -16,11 +16,17 @@ Including another URLconf
 # Django
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
+from rooms.views import room_update
 
 urlpatterns = [
+    # Include Frontend urls
+    path('', include(('rooms.urls', 'rooms'), namespace='rooms')),
+    path('room/<int:pk>/update', room_update, name='room-status'),
     # API v1 url
     path('api/v1/', include('core.urls.v1')),
     # Admin module url
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
