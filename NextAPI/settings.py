@@ -87,7 +87,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'next_db',
+        'NAME': 'nextapi_db',
         'USER': 'postgres',
         'PASSWORD': 'Noshufuru1',
         'HOST': '127.0.0.1',
@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
