@@ -25,7 +25,7 @@ SECRET_KEY = 'h%1@hoe6bt06c-@namqjj&2n0#4l@*1l06s#^pxg^kxb)vjzpg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-"""
+
 # Postgres Local configuration
 DATABASES = {
     'default': {
@@ -91,6 +91,18 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'Noshufuru1',
         'HOST': '127.0.0.1',
+        'PORT': '5432'
+    }
+}
+"""
+
+# POSTGRES DockerConfiguration
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db_postgres',
         'PORT': '5432'
     }
 }
