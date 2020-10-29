@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+# Django rest framework
+from rest_framework.documentation import include_docs_urls
 
 from rooms.views import room_update
 
@@ -29,4 +31,6 @@ urlpatterns = [
     path('api/v1/', include('core.urls.v1')),
     # Admin module url
     path('admin/', admin.site.urls),
+    # API documentation for Frontend team
+    path('docs', include_docs_urls(title='Next API', public=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
