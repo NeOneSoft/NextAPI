@@ -8,8 +8,7 @@
     <ul class="list-group list-group-flush">
       {% for room in rooms %}
       <li class="list-group-item">
-        {{ room.room_name }}
-       <br>
+        <h5>{{ room.room_name }}</h5>
         Date of reservation: {{ room.reserved_date }}
        <br>
         Start Hour: {{ room.start_time }}

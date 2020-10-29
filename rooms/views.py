@@ -38,6 +38,7 @@ class RoomListView(ListView):
     paginate_by = 10
 
 
+# Data for API-Rest
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
