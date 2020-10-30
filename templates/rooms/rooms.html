@@ -19,6 +19,13 @@
        <br>
         Status: {{ room.status }}
        <br>
+        {% if room.end_time == room.current_time.time %}
+         <h6>ALERT: Timed Out, now this room is available</h6>
+          <form action="{% url 'room-status' room.id %}" method="post">
+           {% csrf_token %}
+         <button type="submit" class="btn btn-primary btn-sm btn-note"> OPEN </button>
+         </form>
+        {% endif %}
         {% if room.status == 'OPEN' %}
          <form action="{% url 'room-status' room.id %}" method="post">
            {% csrf_token %}

@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+"""
 # Postgres Local configuration
 DATABASES = {
     'default': {
@@ -94,8 +94,8 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-"""
 
+""""
 # POSTGRES DockerConfiguration
 DATABASES = {
     'default': {
@@ -106,7 +106,7 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-
+"""
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -128,10 +128,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
+# TIME_ZONE = 'America/Mexico_City'
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Mexico_City'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

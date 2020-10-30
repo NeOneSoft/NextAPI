@@ -12,7 +12,7 @@ class RoomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Room
-        fields = ['room_name', 'reserved_date', 'start_time', 'end_time', 'status', 'minutes_estimated', 'current_time']
+        fields = ['id', 'room_name', 'reserved_date', 'start_time', 'end_time', 'status', 'minutes_estimated', 'current_time']
 
 
 class CreateRoomSerializer(serializers.ModelSerializer):
@@ -22,4 +22,4 @@ class CreateRoomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Room
-        fields = ['room_name', 'reserved_date', 'start_time', 'end_time', 'status', 'minutes_estimated']
+        fields = ['room_name', 'reserved_date', 'start_time', 'end_time', 'status', 'minutes_estimated', 'current_time']

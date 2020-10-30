@@ -20,6 +20,9 @@ class Room(models.Model):
     minutes_estimated = models.IntegerField(validators=[MaxValueValidator(180), MinValueValidator(1)])
     current_time = models.DateTimeField(default=timezone.now())
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return self.room_name
 
